@@ -34,8 +34,12 @@ class YD_Log_Item {
 
 class YD_Log_Counter: YD_Log_Item {
     var count: Int = {
-        return 99
+        return 0
     }()
+    
+    override func print_me(){
+        consoleIO.write_kvp_message(name, message: String(count), to: .standard)
+    }
 }
 
 

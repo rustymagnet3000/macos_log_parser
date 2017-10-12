@@ -12,12 +12,18 @@ class yd_console_IO {
         switch to {
         case .standard:
             switch (label.characters.count){
-            case Int.min..<15:
+            case Int.min..<8:
+                print("\(label)\t\t\t\t\t\t\(result)\t\t\(cutting)")
+            case Int.min..<14:
                 print("\(label)\t\t\t\t\t\(result)\t\t\(cutting)")
-            case Int.min..<22:
+            case Int.min..<16:
                 print("\(label)\t\t\t\t\(result)\t\t\(cutting)")
-            case Int.min..<35:
+            case Int.min..<24:
+                print("\(label)\t\t\t\t\(result)\t\t\(cutting)")
+            case Int.min..<32:
                 print("\(label)\t\t\t\(result)\t\t\(cutting)")
+            case Int.min..<38:
+                print("\(label)\t\t\(result)\t\t\(cutting)")
             default:
                 print("\(label)\t\t\t\(result)\t\t\(cutting)")
             }
@@ -32,6 +38,8 @@ class yd_console_IO {
         switch to {
         case .standard:
             switch (label.characters.count){
+            case Int.min..<7:
+                print("\(label)\t\t\t\t\t\t\(message)")
             case Int.min..<15:
                 print("\(label)\t\t\t\t\t\(message)")
             case Int.min..<22:

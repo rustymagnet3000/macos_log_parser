@@ -20,6 +20,12 @@ class yd_helper {
         consoleIO.write_message("**************   \(test.readable_date)   **************\n", to: .standard)
     }
     
+    static func divider() {
+        for _ in (1...BANNER_MAX){
+            consoleIO.write_message("************************************************", to: .standard)
+        }
+    }
+    
     static func footer() {
         for _ in (1...BANNER_MAX){
             consoleIO.write_message("************************************************", to: .standard)
