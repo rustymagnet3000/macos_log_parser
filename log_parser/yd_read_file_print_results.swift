@@ -11,7 +11,7 @@ class yd_file_parser {
             let path = FileManager.default.currentDirectoryPath + "/" + filename
             
             guard let stream_reader = StreamReader(path: path, delimiter: "\n", encoding: .utf8, chunkSize: 4096) else {
-                consoleIO.write_menu("!!", message: "failed to open file", to: .error)
+                consoleIO.write_menu("!!", "failed to open file", .error)
                 exit(89)
             }
             yd_helper.header()

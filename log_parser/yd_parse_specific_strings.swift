@@ -7,8 +7,8 @@ class yd_parse_specific_strings {
         var line_count = 0
         
         for z in search_terms {
-            
-            let log_search_item = YD_Log_Item(name: z.key, search_term: z.value)
+
+            let log_search_item = YD_Log_Item(name: z.key, search_term: z.value.search_term, cut: z.value.cut)
             stream_reader.rewind()
             for i in stream_reader {
                 line_count = line_count + 1

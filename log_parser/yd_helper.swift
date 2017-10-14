@@ -11,19 +11,19 @@ class yd_helper {
 
     static func help() {
         divider()
-        consoleIO.write_menu("Usage", message: "log_parser [-a] [-d] [-c] [-s] file", to: .standard)
-        consoleIO.write_menu("-a", message: "Summary of all items", to: .standard)
-        consoleIO.write_menu("-d", message: "Dump of found strings", to: .standard)
-        consoleIO.write_menu("-c", message: "Count of specific items", to: .standard)
-        consoleIO.write_menu("-s", message: "Search for specific term", to: .standard)
-        consoleIO.write_menu("-v", message: "Version", to: .standard)
+        consoleIO.write_menu("Usage", "log_parser [-a] [-d] [-c] [-s] file", .standard)
+        consoleIO.write_menu("-a", "Summary of all items",.standard)
+        consoleIO.write_menu("-d", "Dump of found strings",.standard)
+        consoleIO.write_menu("-c", "Count of specific items",.standard)
+        consoleIO.write_menu("-s", "Search for specific term",.standard)
+        consoleIO.write_menu("-v", "Version",.standard)
         footer()
     }
     
     static func header() {
         let test = yd_time_helper(raw_date: Date())
         
-        consoleIO.write_menu("**************", message: "\(test.readable_date) \t **************\n", to: .standard)
+        consoleIO.write_menu("**************", "\(test.readable_date) \t **************\n", .standard)
     }
     
     static func divider() {

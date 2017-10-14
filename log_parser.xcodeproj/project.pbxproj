@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		3A1A3D7F1F8E21F100E2296E /* yd_prop_controller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A1A3D7E1F8E21F100E2296E /* yd_prop_controller.swift */; };
+		3A7FDFE91F925EAB00C9E4E2 /* yd_enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7FDFE81F925EAB00C9E4E2 /* yd_enums.swift */; };
 		3A88278D1F83E67D00422A6D /* yd_stream_reader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A88278C1F83E67D00422A6D /* yd_stream_reader.swift */; };
 		3A8C88411F7CF0C70067FA51 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A8C88401F7CF0C70067FA51 /* main.swift */; };
 		3A8C884C1F7CF86D0067FA51 /* yd_read_file_print_results.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A8C884B1F7CF86D0067FA51 /* yd_read_file_print_results.swift */; };
@@ -36,6 +37,7 @@
 
 /* Begin PBXFileReference section */
 		3A1A3D7E1F8E21F100E2296E /* yd_prop_controller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = yd_prop_controller.swift; sourceTree = "<group>"; };
+		3A7FDFE81F925EAB00C9E4E2 /* yd_enums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = yd_enums.swift; sourceTree = "<group>"; };
 		3A88278C1F83E67D00422A6D /* yd_stream_reader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = yd_stream_reader.swift; sourceTree = "<group>"; };
 		3A8C883D1F7CF0C70067FA51 /* log_parser */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = log_parser; sourceTree = BUILT_PRODUCTS_DIR; };
 		3A8C88401F7CF0C70067FA51 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
@@ -93,6 +95,7 @@
 				3A8C884D1F7CF9EA0067FA51 /* yd_helper.swift */,
 				3A8C88531F7D4B280067FA51 /* yd_time_helper.swift */,
 				3A88278C1F83E67D00422A6D /* yd_stream_reader.swift */,
+				3A7FDFE81F925EAB00C9E4E2 /* yd_enums.swift */,
 			);
 			path = log_parser;
 			sourceTree = "<group>";
@@ -179,6 +182,7 @@
 				3AD8DD381F8F651C00AEBB38 /* yd_count_specific_strings.swift in Sources */,
 				3A8C88541F7D4B280067FA51 /* yd_time_helper.swift in Sources */,
 				3A1A3D7F1F8E21F100E2296E /* yd_prop_controller.swift in Sources */,
+				3A7FDFE91F925EAB00C9E4E2 /* yd_enums.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

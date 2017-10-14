@@ -55,7 +55,7 @@ class yd_console_IO {
         }
     }
     
-    func write_menu(_ flag: String, message: String, to: OutputType = .standard) {
+    func write_menu(_ flag: String, _ message: String, _ to: OutputType = .standard) {
         switch to {
         case .standard:
             print("*\t\(flag) \t\t \(message)")
