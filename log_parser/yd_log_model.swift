@@ -42,20 +42,3 @@ class YD_Log_Counter: YD_Log_Item {
     }
 }
 
-
-
-
-extension Collection
-    where Iterator.Element: Equatable,
-    SubSequence.Iterator.Element == Iterator.Element,
-    Indices.Iterator.Element == Index
-{
-    func search<S: Sequence>(_ pattern: S) -> Index?
-        where S.Iterator.Element == Iterator.Element
-    {
-        return indices.first { idx in
-            self[idx..<endIndex].starts(with: pattern)
-        }
-    }
-}
-

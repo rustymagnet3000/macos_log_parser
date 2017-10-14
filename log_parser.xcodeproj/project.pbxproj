@@ -19,6 +19,7 @@
 		3ACAFA371F8B92EB0036EC07 /* yd_log_model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ACAFA361F8B92EB0036EC07 /* yd_log_model.swift */; };
 		3AD8DD361F8F63D500AEBB38 /* yd_parse_specific_strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AD8DD351F8F63D500AEBB38 /* yd_parse_specific_strings.swift */; };
 		3AD8DD381F8F651C00AEBB38 /* yd_count_specific_strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AD8DD371F8F651C00AEBB38 /* yd_count_specific_strings.swift */; };
+		3AD8DD3A1F8FBBD700AEBB38 /* yd_extension_helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AD8DD391F8FBBD700AEBB38 /* yd_extension_helpers.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -48,6 +49,7 @@
 		3ACAFA361F8B92EB0036EC07 /* yd_log_model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = yd_log_model.swift; sourceTree = "<group>"; };
 		3AD8DD351F8F63D500AEBB38 /* yd_parse_specific_strings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = yd_parse_specific_strings.swift; sourceTree = "<group>"; };
 		3AD8DD371F8F651C00AEBB38 /* yd_count_specific_strings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = yd_count_specific_strings.swift; sourceTree = "<group>"; };
+		3AD8DD391F8FBBD700AEBB38 /* yd_extension_helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = yd_extension_helpers.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,13 +84,14 @@
 			isa = PBXGroup;
 			children = (
 				3A8C88401F7CF0C70067FA51 /* main.swift */,
+				3AD8DD391F8FBBD700AEBB38 /* yd_extension_helpers.swift */,
 				3A8C884B1F7CF86D0067FA51 /* yd_read_file_print_results.swift */,
 				3AD8DD351F8F63D500AEBB38 /* yd_parse_specific_strings.swift */,
 				3AD8DD371F8F651C00AEBB38 /* yd_count_specific_strings.swift */,
 				3ACAFA361F8B92EB0036EC07 /* yd_log_model.swift */,
 				3A8C884F1F7CFA9B0067FA51 /* yd_console_io.swift */,
-				3A8C88531F7D4B280067FA51 /* yd_time_helper.swift */,
 				3A8C884D1F7CF9EA0067FA51 /* yd_helper.swift */,
+				3A8C88531F7D4B280067FA51 /* yd_time_helper.swift */,
 				3A88278C1F83E67D00422A6D /* yd_stream_reader.swift */,
 			);
 			path = log_parser;
@@ -166,6 +169,7 @@
 				3A8C884C1F7CF86D0067FA51 /* yd_read_file_print_results.swift in Sources */,
 				3A8C88521F7D022E0067FA51 /* yd_parse_enum.swift in Sources */,
 				3A8C88501F7CFA9B0067FA51 /* yd_console_io.swift in Sources */,
+				3AD8DD3A1F8FBBD700AEBB38 /* yd_extension_helpers.swift in Sources */,
 				3ACAFA371F8B92EB0036EC07 /* yd_log_model.swift in Sources */,
 				3A88278D1F83E67D00422A6D /* yd_stream_reader.swift in Sources */,
 				3A8C884E1F7CF9EA0067FA51 /* yd_helper.swift in Sources */,

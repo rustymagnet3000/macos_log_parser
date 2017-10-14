@@ -1,16 +1,6 @@
 import Foundation
 import Cocoa
 
-extension String {
-    func check_input(regex_pattern: String) -> Bool {
-        do {
-            let regex = try! NSRegularExpression(pattern: regex_pattern,
-                                                 options: [.caseInsensitive])
-            return regex.firstMatch(in: self, options:[], range: NSMakeRange(0, utf16.count)) != nil
-        }
-    }
-}
-
 let consoleIO =  yd_console_IO()
 
     switch CommandLine.argc {
@@ -18,7 +8,7 @@ let consoleIO =  yd_console_IO()
             let user_inputted_flag = CommandLine.arguments[1]
             let user_inputted_filename = CommandLine.arguments[2]
             user_input_do: do {
-                guard user_inputted_flag.check_input(regex_pattern: "^-[ac]") else{
+                guard user_inputted_flag.check_input(regex_pattern: "^-[adcsv]") else{
                     throw Parsing_Errors.NotValidHelperCommand
                 }
                 
@@ -31,6 +21,8 @@ let consoleIO =  yd_console_IO()
                     yd_file_parser.read_plaintext_log_file(filename: user_inputted_filename, flag: user_flag)
                 case .Count:
                     yd_file_parser.read_plaintext_log_file(filename: user_inputted_filename, flag: user_flag)
+                case .Help:
+                    fallthrough
                 default:
                     yd_helper.help()
                 }
@@ -41,6 +33,10 @@ let consoleIO =  yd_console_IO()
         
         case 2:
             let user_inputted_flag = CommandLine.arguments[1]
+            if user_inputted_flag.check_input(regex_pattern: "^-[adcsv]") == true {
+                consoleIO.write_message(message: "enter a file name", to: .standard)
+            }
+            
             user_flags_do: do {
                 guard user_inputted_flag.check_input(regex_pattern: "^-[v]") else{
                     throw Parsing_Errors.NotValidHelperCommand

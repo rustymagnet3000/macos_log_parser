@@ -55,7 +55,16 @@ class yd_console_IO {
         }
     }
     
-    func write_message(_ message: String, to: OutputType = .standard) {
+    func write_menu(_ flag: String, message: String, to: OutputType = .standard) {
+        switch to {
+        case .standard:
+            print("*\t\(flag) \t\t \(message)")
+        case .error:
+            fputs("Error: \(message)\n", stderr)
+        }
+    }
+
+    func write_message(message: String, to: OutputType = .standard) {
         switch to {
         case .standard:
             print("\(message)")
