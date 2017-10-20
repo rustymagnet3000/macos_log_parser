@@ -1,5 +1,20 @@
 import Foundation
 
+public func find_substring(str: String, substring: String) -> Bool {
+    if str.range(of:substring) != nil {
+        return true
+    }
+    return false
+}
+
+public func find_pattern(str: String, regex: String) -> Bool {
+    let range = str.range(of:regex, options:.regularExpression)
+    if range != nil {
+        return true
+    }
+    return false
+}
+
 extension String {
     func check_input(regex_pattern: String) -> Bool {
         do {

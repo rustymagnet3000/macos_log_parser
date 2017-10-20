@@ -2,7 +2,6 @@ import Foundation
 
 class yd_parse_specific_strings {
     
-  
     static func print_summary(stream_reader: StreamReader) {
         var line_count = 0
         
@@ -22,18 +21,10 @@ class yd_parse_specific_strings {
             }
             
             log_search_item.print_me()
-            
         }
         consoleIO.write_kvp_message("line count", message: String(line_count), to: .standard)
     }
 }
 
-extension yd_parse_specific_strings {
-    static func find_substring(str: String, substring: String) -> Bool {
-        if str.range(of:substring) != nil {
-            return true
-        }
-        return false
-    }
-}
+
 

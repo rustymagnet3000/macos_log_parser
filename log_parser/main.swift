@@ -12,7 +12,7 @@ let consoleIO =  yd_console_IO()
                     throw Parsing_Errors.NotValidHelperCommand
                 }
                 
-                guard user_inputted_filename.check_input(regex_pattern: "^[a-z0-9]{1,20}.txt$") else { throw Parsing_Errors.NotValidHelperCommand
+                guard user_inputted_filename.check_input(regex_pattern: "^[a-z0-9_]{1,20}.txt$") else { throw Parsing_Errors.NotValidHelperCommand
                 }
                 let user_flag = User_Flag(flag: user_inputted_flag)
                 
