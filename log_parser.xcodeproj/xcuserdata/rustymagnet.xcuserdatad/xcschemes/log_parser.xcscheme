@@ -70,11 +70,11 @@
          </CommandLineArgument>
          <CommandLineArgument
             argument = "-a plaintext4_prod.txt"
-            isEnabled = "NO">
+            isEnabled = "YES">
          </CommandLineArgument>
          <CommandLineArgument
             argument = "-c plaintext2.txt"
-            isEnabled = "YES">
+            isEnabled = "NO">
          </CommandLineArgument>
       </CommandLineArguments>
       <AdditionalOptions>

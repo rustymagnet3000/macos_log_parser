@@ -4,6 +4,14 @@ let BANNER_MAX: Int = 1
 
 class yd_helper {
     
+    static func get_user_input() -> String? {
+        divider()
+        consoleIO.write_message(message: "Select option", to: .standard)
+        let keyboard = FileHandle.standardInput
+        let inputData = keyboard.availableData
+        return String(data: inputData, encoding:String.Encoding(rawValue: String.Encoding.utf8.rawValue))!
+    }
+    
     static func version() {
         let version = "0.01"
         consoleIO.write_kvp_message("Version", message: version)

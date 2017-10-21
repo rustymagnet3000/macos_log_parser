@@ -25,6 +25,13 @@ extension String {
     }
 }
 
+extension String {
+    func condense_whitespace() -> String {
+        return self.components(separatedBy: .whitespacesAndNewlines)
+            .filter { !$0.isEmpty }
+            .joined(separator: " ")
+    }
+}
 
 extension Collection
     where Iterator.Element: Equatable,

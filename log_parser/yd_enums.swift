@@ -5,6 +5,15 @@ enum YD_Cut : Int {
     case    All
 }
 
+enum Parsing_Errors : Error {
+    case    NotValidHelperCommand
+    case    NoOptionSelected
+    case    TooShort
+    case    TimeError
+    case    TimeValueError
+    case    CannotReadFile
+}
+
 
 enum User_Flag : String {
     case    Summary
@@ -25,3 +34,28 @@ enum User_Flag : String {
         }
     }
 }
+
+enum HTTP_Result_Status : String {
+    case    HTTP_Success
+    case    HTTP_Failure
+    case    HTTP_Server_Error
+    case    HTTP_Server_Rejected
+    case    HTTP_Result_Unhandled
+    
+    init(result: String){
+        
+        switch result {
+        case "200":
+            self = .HTTP_Success
+        case "201":
+            self = .HTTP_Success
+        case "403":
+            self = .HTTP_Server_Rejected
+        case "500":
+            self = .HTTP_Server_Error
+        default:
+            self = .HTTP_Result_Unhandled
+        }
+    }
+}
+
