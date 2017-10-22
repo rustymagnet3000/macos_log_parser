@@ -4,27 +4,24 @@ let BANNER_MAX: Int = 1
 
 class yd_helper {
     
-    static func get_user_input() -> String? {
-        divider()
-        consoleIO.write_message(message: "Select option", to: .standard)
-        let keyboard = FileHandle.standardInput
-        let inputData = keyboard.availableData
-        return String(data: inputData, encoding:String.Encoding(rawValue: String.Encoding.utf8.rawValue))!
-    }
-    
     static func version() {
         let version = "0.01"
         consoleIO.write_kvp_message("Version", message: version)
     }
 
-    static func help() {
+    static func help_file() {
         divider()
-        consoleIO.write_menu("Usage", "log_parser [-a] [-d] [-c] [-s] file", .standard)
-        consoleIO.write_menu("-a", "Summary of all items",.standard)
-        consoleIO.write_menu("-d", "Dump of found strings",.standard)
-        consoleIO.write_menu("-c", "Count of specific items",.standard)
-        consoleIO.write_menu("-s", "Search for specific term",.standard)
-        consoleIO.write_menu("-v", "Version",.standard)
+        consoleIO.write_menu("Usage:", "log_parser [filename.txt]", .standard)
+        footer()
+    }
+
+    static func help_flags() {
+        divider()
+        consoleIO.write_menu("a", "Summary of all items",.standard)
+        consoleIO.write_menu("d", "Dump of found strings",.standard)
+        consoleIO.write_menu("c", "Count of specific items",.standard)
+        consoleIO.write_menu("s", "Search for specific term",.standard)
+        consoleIO.write_menu("v", "Version",.standard)
         footer()
     }
     

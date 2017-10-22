@@ -69,7 +69,7 @@
             isEnabled = "NO">
          </CommandLineArgument>
          <CommandLineArgument
-            argument = "-a plaintext4_prod.txt"
+            argument = "plaintext4_prod.txt"
             isEnabled = "YES">
          </CommandLineArgument>
          <CommandLineArgument

@@ -7,11 +7,12 @@ enum YD_Cut : Int {
 
 enum Parsing_Errors : Error {
     case    NotValidHelperCommand
+    case    NotValidFileName
     case    NoOptionSelected
     case    TooShort
     case    TimeError
     case    TimeValueError
-    case    CannotReadFile
+    case    ErrorReadingFile
 }
 
 
