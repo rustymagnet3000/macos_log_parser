@@ -10,10 +10,16 @@ switch CommandLine.argc {
             guard user_inputted_filename.check_input(regex_pattern: "^[a-z0-9_-]{1,20}.txt$") else {
                 throw Parsing_Errors.NotValidFileName
             }
-            try yd_read_file.read_plaintext_log_file(filename: user_inputted_filename)
-            let user_flag = try yd_get_user_flag.get()
-            print("user flag was: \(user_flag)")
-            // try yd_analyze_file.generate(stream_reader: stream_reader)
+            /* analysis starts before user input */
+            let stream_reader = try yd_read_file.read_plaintext_log_file(filename: user_inputted_filename)
+            try yd_analyze_file.generate(stream_reader: stream_reader)
+
+             /* capture user input */
+            var user_flag = User_Flag.Waiting_Input
+            while user_flag != .Quit {
+                user_flag = try yd_get_user_flag.get()
+                try yd_handle_user_flag.handle(flag: user_flag)
+            }
         }
         catch Parsing_Errors.ErrorReadingFile{
             consoleIO.write_message(message: "Error reading file", to: .error)

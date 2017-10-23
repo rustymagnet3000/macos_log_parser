@@ -1,51 +1,58 @@
 import Foundation
 
+var count = 0
+var specific_logs_arry: [YD_Log_Item] = []
+var network_logs_arry: [YD_Log_Item] = []
+var count_logs_arry: [YD_Log_Item] = []
+var count_of_results: [String: Int] = [:]
+
 class yd_analyze_file {
 
     static func generate(stream_reader: StreamReader) throws {
         
-        var count = 0
-        var specific_logs_arry: [YD_Log_Item] = []
-        var network_logs_arry: [YD_Log_Item] = []
-        var count_logs_arry: [YD_Log_Item] = []
-        var count_of_results: [String: Int] = [:]
-        
         do {
+            let start = yd_time_helper(raw_date: Date())
+            yd_helper.header()
+            
             for z in stream_reader {
                 
                 count += 1
                 
-                for i in search_terms {
+                search_term_loop: for i in search_terms {
                     let log_item = YD_Log_Item(name: i.key, search_term: i.value.search_term, cut: i.value.cut, special_value: i.value.special)
+                    
                     if find_substring(str: z, substring: log_item.search_term) == true {
                         
-                        switch (i.value.count, i.key) {
-                        case (true, _):
-                            count_logs_arry.append(log_item)
-                        case (_, "Networks Requests"):
-                            log_item.description_from_log = z
-                            network_logs_arry.append(log_item)
-                        default:
-                            specific_logs_arry.append(log_item)
-                        }
+                        switch (i.key, i.value.count) {
+                            
+                            case (i.key, true):
+                                count_logs_arry.append(log_item)
+                            
+                            case ("Network Request", _):
+                                log_item.description_from_log = z
+                                network_logs_arry.append(log_item)
+                            
+                            case (i.key, false):
+                                log_item.description_from_log = z
+                                specific_logs_arry.append(log_item)
+                                search_terms.removeValue(forKey: i.key)
+                                break search_term_loop
+                            
+                            default:
+                                print("in default")
+                            }
                     }
                 }
             }
             
-            print("count of total counts \(count_logs_arry.count)")
-            for x in count_logs_arry {
-                count_of_results[x.name] = (count_of_results[x.name] ?? 0) + 1
-            }
-            
-            for (key, value) in count_of_results {
-                print("\(key) occurs \(value) time(s)")
-            }
+            let end = yd_time_helper(raw_date: Date())
+            let analysis_time = try yd_time_helper.start_minus_finish_epoch(start_time_epoch: start.epoch_time, end_time_epoch: end.epoch_time)
+            consoleIO.write_kvp_message("Success", message: "Finished in \(analysis_time ) seconds", to: .standard)
+            consoleIO.write_kvp_message("lines counted", message: String(count), to: .standard)
+ 
         }
         catch {
-                print("error in do")
+                throw Parsing_Errors.ErrorDuringAnalysis
         }
-
-            print("lines = \(count)")
-            print("end of analysis")
     }
 }

@@ -6,6 +6,8 @@ enum YD_Cut : Int {
 }
 
 enum Parsing_Errors : Error {
+    case    ErrorReadingUserInput
+    case    ErrorDuringAnalysis
     case    NotValidHelperCommand
     case    NotValidFileName
     case    NoOptionSelected
@@ -17,19 +19,29 @@ enum Parsing_Errors : Error {
 
 
 enum User_Flag : String {
+    case    Waiting_Input
     case    Summary
+    case    Network
+    case    Certificates
     case    Count
     case    Help
+    case    Quit
     case    Unknown
     
     init(flag: String){
         switch flag {
-        case "-a":
+        case "a":
             self = .Summary
-        case "-c":
+        case "c":
             self = .Count
-        case "-h":
+        case "f":
+            self = .Certificates
+        case "n":
+            self = .Network
+        case "h":
             self = .Help
+        case "q":
+            self = .Quit
         default:
             self = .Unknown
         }

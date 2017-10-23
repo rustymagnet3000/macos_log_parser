@@ -3,31 +3,26 @@ import Cocoa
 
 class yd_get_user_flag {
     
-    static func get() throws -> Character {
-        yd_helper.help_flags()
+    static func get() throws -> User_Flag {
         yd_helper.divider()
         consoleIO.write_message(message: "Enter option:", to: .standard)
         
         guard var user_inputted_flag = readLine() else {
-            throw Parsing_Errors.NotValidHelperCommand
+            throw Parsing_Errors.ErrorReadingUserInput
         }
         
-        guard user_inputted_flag.check_input(regex_pattern: "^[adcsv]") else{
+        guard user_inputted_flag.check_input(regex_pattern: "^[adnhqcsv]") else{
             throw Parsing_Errors.NotValidHelperCommand
         }
         
         user_inputted_flag = user_inputted_flag.condense_whitespace()
-        var flag_char: Character = " "
+
+        let flag_enum = User_Flag(flag: user_inputted_flag)
         
-        for (i, c) in user_inputted_flag.characters.enumerated() {
-            if i == 0 {
-                flag_char = c
-            }
-            if i > 0 {
-                throw Parsing_Errors.NotValidHelperCommand
-            }
+        guard flag_enum != .Unknown else {
+            throw Parsing_Errors.NotValidHelperCommand
         }
         
-        return flag_char
-        }
+        return flag_enum
+    }
 }

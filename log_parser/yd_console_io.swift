@@ -12,6 +12,8 @@ class yd_console_IO {
         switch to {
         case .standard:
             switch (label.characters.count){
+            case Int.min..<4:
+                print("\(label)\t\t\t\t\t\t\t\(result)\t\t\(cutting)")
             case Int.min..<8:
                 print("\(label)\t\t\t\t\t\t\(result)\t\t\(cutting)")
             case Int.min..<14:
