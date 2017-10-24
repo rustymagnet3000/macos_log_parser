@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3A0BEB311F9FAAA200E436A3 /* yd_refiner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A0BEB301F9FAAA200E436A3 /* yd_refiner.swift */; };
 		3A26234A1F9DC67000DF1D1B /* yd_handle_user_flag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A2623491F9DC67000DF1D1B /* yd_handle_user_flag.swift */; };
 		3A7FDFE91F925EAB00C9E4E2 /* yd_enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7FDFE81F925EAB00C9E4E2 /* yd_enums.swift */; };
 		3A88278D1F83E67D00422A6D /* yd_stream_reader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A88278C1F83E67D00422A6D /* yd_stream_reader.swift */; };
@@ -35,6 +36,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		3A0BEB301F9FAAA200E436A3 /* yd_refiner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = yd_refiner.swift; sourceTree = "<group>"; };
 		3A2623491F9DC67000DF1D1B /* yd_handle_user_flag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = yd_handle_user_flag.swift; sourceTree = "<group>"; };
 		3A7FDFE81F925EAB00C9E4E2 /* yd_enums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = yd_enums.swift; sourceTree = "<group>"; };
 		3A88278C1F83E67D00422A6D /* yd_stream_reader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = yd_stream_reader.swift; sourceTree = "<group>"; };
@@ -103,6 +105,7 @@
 			isa = PBXGroup;
 			children = (
 				3A8C884A1F7CF7FA0067FA51 /* plaintext.txt */,
+				3A0BEB301F9FAAA200E436A3 /* yd_refiner.swift */,
 				3A8E4D341F828FF700A5F545 /* yd_checks_to_perform.swift */,
 			);
 			path = not_on_repo;
@@ -174,6 +177,7 @@
 				3A8C884E1F7CF9EA0067FA51 /* yd_helper.swift in Sources */,
 				3A26234A1F9DC67000DF1D1B /* yd_handle_user_flag.swift in Sources */,
 				3A8E4D351F828FF700A5F545 /* yd_checks_to_perform.swift in Sources */,
+				3A0BEB311F9FAAA200E436A3 /* yd_refiner.swift in Sources */,
 				3A8C88411F7CF0C70067FA51 /* main.swift in Sources */,
 				3AE075F81F9CAC2D00983DFB /* yd_user_entered_flag.swift in Sources */,
 				3AD8DD361F8F63D500AEBB38 /* yd_analyze_file.swift in Sources */,

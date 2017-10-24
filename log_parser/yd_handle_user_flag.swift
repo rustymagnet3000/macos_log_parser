@@ -14,12 +14,12 @@ class yd_handle_user_flag {
             
             case .Network:
                 for x in network_logs_arry {
-                    x.print_me()
+                    x.print_concise()
             }
 
             case .Certificates:
             for x in network_logs_arry {
-                x.print_me()
+                x.print_concise()
             }
             
             case .Help:

@@ -20,6 +20,7 @@ class yd_analyze_file {
                 
                 search_term_loop: for i in search_terms {
                     let log_item = YD_Log_Item(name: i.key, search_term: i.value.search_term, cut: i.value.cut, special_value: i.value.special)
+               //     let network_item = YD_Network_Item(name: i.key, search_term: i.value.search_term, cut: i.value.cut, special_value: i.value.special)
                     
                     if find_substring(str: z, substring: log_item.search_term) == true {
                         

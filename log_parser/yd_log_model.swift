@@ -1,4 +1,5 @@
 class YD_Log_Item {
+    
     let name: String
     let search_term: String
     var special_value: Bool
@@ -16,7 +17,10 @@ class YD_Log_Item {
                 case .Last_Three:
                     description_from_log = String(description_from_log.characters.suffix(cut.rawValue))
                 default:
-                    description_from_log = String(description_from_log[idx..<description_from_log.endIndex])
+                    let range: Range<String.Index> = description_from_log.range(of: search_term)!
+                    let index: Int = description_from_log.distance(from: description_from_log.startIndex, to: range.upperBound)
+                    let trimmed_desc = String(description_from_log.characters.dropFirst(index))
+                    description_from_log = trimmed_desc.condense_whitespace()
                 }
             }
         }
@@ -36,5 +40,8 @@ class YD_Log_Item {
     func print_me(){
         consoleIO.write_kvp_message(name, message: description_from_log, to: .standard)
     }
-}
 
+    func print_concise(){
+        consoleIO.write_message(message: description_from_log, to: .standard)
+    }
+}
