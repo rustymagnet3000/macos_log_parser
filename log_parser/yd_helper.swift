@@ -18,9 +18,10 @@ class yd_helper {
     static func help_flags() {
         divider()
         consoleIO.write_menu("a", "Summary of all items",.standard)
-        consoleIO.write_menu("d", "Dump of found strings",.standard)
         consoleIO.write_menu("c", "Count of specific items",.standard)
-        consoleIO.write_menu("s", "Search for specific term",.standard)
+        consoleIO.write_menu("n", "Show host+path of requests",.standard)
+        consoleIO.write_menu("f", "Show certs loaded into PIN list",.standard)
+        consoleIO.write_menu("s", "Search for specific term - NOT BUILT",.standard)
         consoleIO.write_menu("v", "Version",.standard)
         footer()
     }

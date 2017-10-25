@@ -1,4 +1,8 @@
-class YD_Log_Item {
+class YD_Log_Item: Equatable {
+    static func ==(lhs: YD_Log_Item, rhs: YD_Log_Item) -> Bool {
+        return lhs === rhs
+    }
+    
     
     let name: String
     let search_term: String

@@ -33,6 +33,18 @@ extension String {
     }
 }
 
+public extension Array where Element : Equatable {
+    var unique: [Element] {
+        var unique_values: [Element] = []
+        forEach { item in
+            if !unique_values.contains(item) {
+                unique_values += [item]
+            }
+        }
+        return unique_values
+    }
+}
+
 extension Collection
     where Iterator.Element: Equatable,
     SubSequence.Iterator.Element == Iterator.Element,

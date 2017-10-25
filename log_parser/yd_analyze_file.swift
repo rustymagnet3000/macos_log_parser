@@ -3,6 +3,7 @@ import Foundation
 var count = 0
 var specific_logs_arry: [YD_Log_Item] = []
 var network_logs_arry: [YD_Log_Item] = []
+var certificate_logs_array: [YD_Log_Item] = []
 var count_logs_arry: [YD_Log_Item] = []
 var count_of_results: [String: Int] = [:]
 
@@ -28,6 +29,10 @@ class yd_analyze_file {
                             
                             case (i.key, true):
                                 count_logs_arry.append(log_item)
+                            
+                            case ("Certificates", _):
+                                log_item.description_from_log = z
+                                certificate_logs_array.append(log_item)
                             
                             case ("Network Request", _):
                                 log_item.description_from_log = z

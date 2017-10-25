@@ -18,9 +18,9 @@ class yd_handle_user_flag {
             }
 
             case .Certificates:
-            for x in network_logs_arry {
-                x.print_concise()
-            }
+                    for x in certificate_logs_array.unique {
+                        x.print_concise()
+                    }
             
             case .Help:
                 yd_helper.help_flags()
@@ -38,6 +38,7 @@ class yd_handle_user_flag {
                 consoleIO.write_message(message: "🔵🐜 Thanks for using LogParser 🐜🔵", to: .standard)
                 specific_logs_arry.removeAll()
                 network_logs_arry.removeAll()
+                certificate_logs_array.removeAll()
                 count_logs_arry.removeAll()
 
             default:
