@@ -1,14 +1,17 @@
 class YD_Log_Item: Equatable {
-    static func ==(lhs: YD_Log_Item, rhs: YD_Log_Item) -> Bool {
-        return lhs === rhs
-    }
     
+    static func ==(lhs: YD_Log_Item, rhs: YD_Log_Item) -> Bool {
+    
+        return lhs.description_from_log == rhs.description_from_log
+    
+    }
     
     let name: String
     let search_term: String
     var special_value: Bool
     var cut: YD_Cut
     var description_from_log: String = "-- not found --" {
+        
         didSet {
          if let idx = description_from_log.utf16.search(search_term.utf16)?
             .samePosition(in: description_from_log) {

@@ -226,11 +226,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "log_parser/yd_log_model.swift"
-            timestampString = "530612514.934863"
+            timestampString = "530700757.592878"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "14"
-            endingLineNumber = "14"
+            startingLineNumber = "17"
+            endingLineNumber = "17"
             landmarkName = "description_from_log"
             landmarkType = "24">
          </BreakpointContent>
