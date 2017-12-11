@@ -10,37 +10,30 @@ class yd_helper {
     }
 
     static func help_file() {
-        divider()
-        consoleIO.write_menu("Usage:", "log_parser [filename.txt]", .standard)
-        footer()
+        consoleIO.write_kvp_message("Usage", message: "log_parser [filename.txt]")
     }
 
     static func help_flags() {
-        divider()
-        consoleIO.write_menu("a", "Summary of all items",.standard)
-        consoleIO.write_menu("c", "Count of specific items",.standard)
-        consoleIO.write_menu("n", "Show host+path of requests",.standard)
-        consoleIO.write_menu("f", "Show certs loaded into PIN list",.standard)
-        consoleIO.write_menu("s", "Search for specific term - NOT BUILT",.standard)
-        consoleIO.write_menu("v", "Version",.standard)
-        footer()
+        consoleIO.write_kvp_message("a", message: "Summary of all items")
+//        consoleIO.write_menu("c", "Count of specific items",.standard)
+//        consoleIO.write_menu("n", "List host+path of requests",.standard)
+//        consoleIO.write_menu("f", "List loaded certificates",.standard)
+//        consoleIO.write_menu("s", "Search for specific term - NOT BUILT",.standard)
+//        consoleIO.write_menu("v", "Version",.standard)
+
     }
     
     static func header() {
-        let test = yd_time_helper(raw_date: Date())
-        
-        consoleIO.write_menu("**************", "\(test.readable_date) \t **************\n", .standard)
+        let day_time = String(repeatElement("-", count: 16) + " " + yd_time_helper(raw_date: Date()).readable_date + " ")
+        let size = (yd_global.wide_boundary)  - day_time.count
+        consoleIO.write_message(message: String(day_time + repeatElement("-", count: size)), to: .standard)
     }
     
     static func divider() {
         for _ in (1...BANNER_MAX){
-            consoleIO.write_message(message: "************************************************", to: .standard)
+            consoleIO.write_message(message: String(repeatElement("-", count: yd_global.wide_boundary)), to: .standard)
         }
     }
     
-    static func footer() {
-        for _ in (1...BANNER_MAX){
-            consoleIO.write_message(message: "************************************************", to: .standard)
-        }
-    }
+
 }

@@ -11,7 +11,7 @@ class yd_get_user_flag {
             throw Parsing_Errors.ErrorReadingUserInput
         }
         
-        guard user_inputted_flag.check_input(regex_pattern: "^[adnhfqcsv]") else{
+        guard user_inputted_flag.check_input(regex_pattern: yd_global.user_flag_regex) else{
             throw Parsing_Errors.NotValidHelperCommand
         }
         

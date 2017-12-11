@@ -23,6 +23,8 @@ enum User_Flag : String {
     case    Summary
     case    Network
     case    Certificates
+    case    Version
+    case    Search
     case    Count
     case    Help
     case    Quit
@@ -36,12 +38,16 @@ enum User_Flag : String {
             self = .Count
         case "f":
             self = .Certificates
+        case "s":
+            self = .Search
         case "n":
             self = .Network
         case "h":
             self = .Help
         case "q":
             self = .Quit
+        case "v":
+            self = .Version
         default:
             self = .Unknown
         }

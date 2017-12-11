@@ -10,17 +10,23 @@ class yd_handle_user_flag {
             case .Summary:
                 for x in specific_logs_arry {
                     x.print_me()
-            }
+                }
             
             case .Network:
                 for x in network_logs_arry {
                     x.print_concise()
-            }
+                }
 
             case .Certificates:
-                    for x in certificate_logs_array.unique {
-                        x.print_concise()
-                    }
+                for x in certificate_logs_array.unique {
+                    x.print_concise()
+                }
+
+            case .Search:
+                consoleIO.write_message(message: "🔵🐜 Search functionality in progress 🐜🔵", to: .standard)
+
+            case .Version:
+                yd_helper.version()
             
             case .Help:
                 yd_helper.help_flags()
@@ -44,6 +50,5 @@ class yd_handle_user_flag {
             default:
                 exit(80)
         }
-        yd_helper.divider()
     }
 }

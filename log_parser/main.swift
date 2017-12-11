@@ -7,7 +7,7 @@ switch CommandLine.argc {
     case 2:
         let user_inputted_filename = CommandLine.arguments[1]
         user_input_do: do {
-            guard user_inputted_filename.check_input(regex_pattern: "^[a-z0-9_-]{1,20}.txt$") else {
+            guard user_inputted_filename.check_input(regex_pattern: yd_global.filename_regex) else {
                 throw Parsing_Errors.NotValidFileName
             }
             /* analysis starts before user input */
